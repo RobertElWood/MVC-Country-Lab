@@ -22,9 +22,8 @@ namespace MVC_Country_Lab
         public void Display()
         {
             CountryColors(DisplayCountry);
-
             Console.WriteLine($"\nName of Country:\t{DisplayCountry.Name}\n");
-
+         
             if (DisplayCountry.Colors.Count == 3)
             {
                 Console.BackgroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), DisplayCountry.Colors[2]);
@@ -32,19 +31,18 @@ namespace MVC_Country_Lab
             }
 
             Console.WriteLine($"Continent:\t\t{DisplayCountry.Continent}\n");
-           
+
+
             if (DisplayCountry.Colors.Count == 3) 
             {
                 Console.BackgroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), DisplayCountry.Colors[0]);
                 Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), DisplayCountry.Colors[1]);
                 
             }
-
+            
             Console.Write($"Country Colors:\t\t");
             writeColors(DisplayCountry.Colors);
-
             Console.ResetColor(); //resets console colors to default values before re-running app.
-            Console.BackgroundColor = ConsoleColor.Black;
         }
 
         //Iterates through the colors in the list of colors present in Country object.

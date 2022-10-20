@@ -79,6 +79,7 @@ namespace MVC_Country_Lab
                     //Calls method to display information on that selected country
                     //Through CountryView, also shows colors of that country.
                     CountryAction(chosenCountry);
+                    Console.ResetColor();
 
                 } 
                 catch (FormatException e)
@@ -100,18 +101,21 @@ namespace MVC_Country_Lab
             CountryView DisplayTarget = new CountryView(targetCountry);
 
             DisplayTarget.Display();
-
+            
         }
         
         //Method to set boolean condition to re-run, or end, the application.
         public bool viewAgain ()
         {
-            Console.WriteLine("\nWould you like to view information on another country? Y/N?\n");
+            Console.Write("\nWould you like to view information on another country? Y/N?\n");
+            Console.WriteLine();
             string input = Console.ReadLine().ToLower();
+            
 
             if (input == "y")
             {
                 Console.WriteLine("\nOkay! Lets look up another country.\n");
+                Console.Clear();
                 return true;
             }
             else if (input == "n")
